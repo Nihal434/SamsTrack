@@ -19,6 +19,7 @@ import { TakeAttendanceComponent } from './components/take-attendance/take-atten
 import { AllAttendanceComponent } from './components/all-attendance/all-attendance.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { HidePasswordPipe } from './pipes/hide-password.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HomeComponent } from './components/home/home.component';
     ViewSubjectComponent,
     TakeAttendanceComponent,
     AllAttendanceComponent,
-    HomeComponent
+    HomeComponent,
+    HidePasswordPipe,
   ],
   imports: [
     BrowserModule,

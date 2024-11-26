@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-add-user',
@@ -6,5 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent {
+  constructor(private userService:UserServiceService,private router:Router){}
 
+  username:any='';
+  password:any='';
+  firstName:any='';
+  lastName:any='';
+  email:any='';
+  role :any='';
+
+
+  
+  addUser(){
+    const user = {
+      username:this.username,
+      password:this.password,
+      firstName:this.firstName,
+      lastName:this.lastName,
+      email:this.email,
+      role:this.role
+    }
+
+    this.userService.addUser(user).subscribe((response)=>{
+      alert("User added successfully");
+      this.router.navigate(['/all-user']);
+    });
+  }
 }
